@@ -3,7 +3,8 @@
 //  MyMathLibPackageDescription
 //
 //  Created by Yann Meurisse on 29/01/2018.
-// 
+//
+//    Modifié le 05/02/2018 à 20:36
 import Foundation
 
 postfix operator °
@@ -52,7 +53,7 @@ public class Matrice: CustomStringConvertible
    {
       self.data = Array(repeating: 0.0, count: nbl*nbl)
       self.nbl = nbl
-      self.nbl = nbl
+      self.nbc = nbl
    }
 
    
