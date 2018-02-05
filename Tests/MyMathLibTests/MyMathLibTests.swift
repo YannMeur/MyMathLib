@@ -44,6 +44,16 @@ class MyMathLibTests: XCTestCase
       
       XCTAssertEqual(monVect1==monVect2, false)
    }
+   func testMatriceInit()
+   {
+      // This is an example of a functional test case.
+      // Use XCTAssert and related functions to verify your tests produce the correct
+      // results.
+      let maMatrice = Matrice(nbl: 4)
+      
+      
+      XCTAssertEqual(maMatrice[1,1]==0, true)
+   }
 
 
    static var allTests =
@@ -51,5 +61,6 @@ class MyMathLibTests: XCTestCase
         ("testVecteur", testVecteur),
         ("testEgaliteVecteurs", testEgaliteVecteurs),
         ("testInegaliteVecteurs", testInegaliteVecteurs),
+        ("testMatriceInit",testMatriceInit)
    ]
 }

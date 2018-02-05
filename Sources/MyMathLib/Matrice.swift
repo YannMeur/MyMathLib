@@ -40,7 +40,21 @@ public class Matrice: CustomStringConvertible
       self.nbc = M.nbc
       self.nbl = M.nbl
    }
-   
+ 
+   public init(nbl: Int, nbc: Int)
+   {
+      self.data = Array(repeating: 0.0, count: nbl*nbc)
+      self.nbc = nbc
+      self.nbl = nbl
+   }
+
+   public init(nbl: Int)
+   {
+      self.data = Array(repeating: 0.0, count: nbl*nbl)
+      self.nbl = nbl
+      self.nbl = nbl
+   }
+
    
    
    /*********************************************************
