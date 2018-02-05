@@ -84,6 +84,14 @@ public class Matrice: CustomStringConvertible
    }
    
    /*********************************************************
+    Retourne la dim. de la matrice sous forme de String
+    *********************************************************/
+   public func dim() -> String
+   {
+   return "\(self.nbl)X\(self.nbc)"
+   }
+
+   /*********************************************************
     Implémente la notion d'indice (subscript) pour "\(Matrice)"
     *********************************************************/
    public subscript(_ x: Int,_ y: Int) -> Double
@@ -139,7 +147,33 @@ public class Matrice: CustomStringConvertible
          return Matrice(data,nbl: lhs.nbl,nbc: rhs.nbc)
       }
    }
-   
+ 
+   /*********************************************************
+    Implémente le "*" d'un scalaire et d'une Matrice
+    *********************************************************/
+   public static func *(lhs: Double,rhs: Matrice) -> Matrice?
+   {
+      var data: [Double] = []
+      for elem in rhs.data
+      {
+         data.append(lhs*elem)
+      }
+      return Matrice(data,nbl: rhs.nbl,nbc: rhs.nbc)
+   }
+   /*********************************************************
+    Implémente le "/" d'une Matrice et d'un scalaire
+    TODO : gérer diviseur = 0.0
+    *********************************************************/
+   public static func /(lhs: Matrice, rhs: Double) -> Matrice?
+   {
+      var data: [Double] = []
+      for elem in lhs.data
+      {
+         data.append(elem/rhs)
+      }
+      return Matrice(data,nbl: lhs.nbl,nbc: lhs.nbc)
+   }
+
    
    /*********************************************************
     Fonction qui retourne une ligne, sous forme d'un Vecteur,
